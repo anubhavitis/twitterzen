@@ -1,29 +1,26 @@
 {
-    "manifest_version": 2,
-    "name": "Twitter Zen Mode",
-    "version": "1.0",
-    "description": "Takes you to a calmer, neater version of Twitter",
-    "icons": {
-        "240": "icon240.png",
-        "48": "icon48.png"
-    },
-    "page_action": {
-        "default_icon": "icon48.png",
-        "default_popup": "popup.html",
-        "default_title": "Twitter Zen Mode"
-    },
-    "background":{
-        "scripts": ["eventPage.js"],
-        "persistent": false
-    },
-    "content_scripts": [
-        {
-            "matches": ["https://twitter.com/*"],
-            "js": ["content.js", "jquery-3.1.0.min.js"]
-        }
-    ],
-    "permissions": [
-        "tabs",
-        "https://twitter.com/*"
-    ]
+  "manifest_version": 2,
+  "name": "Twitter Zen Mode",
+  "version": "1.0",
+  "description": "Takes you to a calmer, neater version of Twitter",
+  "icons": {
+    "240": "icon240.png",
+    "48": "icon48.png"
+  },
+  "page_action": {
+    "default_icon": "icon48.png",
+    "default_popup": "popup.html",
+    "default_title": "Twitter Zen Mode"
+  },
+  "background": {
+    "scripts": ["eventPage.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://twitter.com/*"],
+      "js": ["content.js", "jquery-3.1.0.min.js"]
+    }
+  ],
+  "permissions": ["tabs", "https://twitter.com/*", "storage"]
 }
