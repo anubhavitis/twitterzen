@@ -19,8 +19,10 @@
   "content_scripts": [
     {
       "matches": ["https://twitter.com/*"],
-      "js": ["content.js", "jquery-3.1.0.min.js"]
+      "js": ["/content.js", "jquery-3.1.0.min.js", "/custom_js_script.js"]
     }
   ],
-  "permissions": ["tabs", "https://twitter.com/*", "storage"]
+  "permissions": ["tabs", "https://twitter.com/*", "storage", "activeTab"],
+  "content_security_policy": "script-src 'self' 'unsafe-eval' https://cdn.jsdelivr.net; object-src 'self'"
+
 }

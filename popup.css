@@ -1,0 +1,11 @@
+p{
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.toggels{
+  display: flex;
+  justify-content: center;
+}
