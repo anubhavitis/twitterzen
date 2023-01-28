@@ -20,16 +20,12 @@ myButton.onclick = () => {
     );
   });
 
-  ChangeButton();
-
-  // Reload
-  chrome.tabs.getSelected(null, function (tab) {
-    // calling external js file directly instead of on load
-    chrome.tabs.executeScript(tab.id, { file: './custom_js_script.js' });
-  });
+  executeLogic();
 };
 
-function ChangeButton() {
+function executeLogic() {
+
+  //Update the popup page
   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
     var tab = tabs[0];
 
@@ -48,11 +44,15 @@ function ChangeButton() {
           myButton.classList.remove('disable-btn')
           myButton.classList.add('enable-btn')
         }
-        // myButton.textContent = enabled == 'true' ? 'Disable' : 'Enable';
         console.log('button text:', myButton.textContent);
       }
     );
   });
+
+  // Inject code to twitter
+  chrome.tabs.getSelected(null, function (tab) {
+    chrome.tabs.executeScript(tab.id, { file: './custom_js_script.js' });
+  });
 }
 
-window.addEventListener("load", ChangeButton)
+window.addEventListener("load", executeLogic)
