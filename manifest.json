@@ -4,11 +4,11 @@
   "version": "1.0",
   "description": "Takes you to a calmer, neater version of Twitter",
   "icons": {
-    "240": "icon240.png",
-    "48": "icon48.png"
+    "240": "logo-b-240.png",
+    "48": "logo-b-48.png"
   },
   "page_action": {
-    "default_icon": "icon48.png",
+    "default_icon": "logo-b-240.png",
     "default_popup": "popup.html",
     "default_title": "Twitter Zen Mode"
   },
