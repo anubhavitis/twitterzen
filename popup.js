@@ -35,7 +35,15 @@ window.onload = function () {
     chrome.tabs.executeScript(tab.id, { code: `localStorage.getItem("enabled");` }, (data) => {
       enabled = data[0];
       console.log('enabled:', enabled)
-      myButton.textContent = (enabled=="true") ? "Disable" : "Enable";
+      if (enabled === "true") {
+        myButton.textContent = "Disable";
+        myButton.classList.remove('enable-btn')
+        myButton.classList.add('disable-btn')
+      } else {
+        myButton.textContent = "Enable";
+        myButton.classList.remove('disable-btn')
+        myButton.classList.add('enable-btn')
+      }
       console.log("button text:", myButton.textContent)
     });
   });
