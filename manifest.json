@@ -19,7 +19,7 @@
   "content_scripts": [
     {
       "matches": ["https://twitter.com/*"],
-      "js": ["/content.js", "jquery-3.1.0.min.js", "/custom_js_script.js"]
+      "js": ["/custom_js_script.js", "/content.js", "jquery-3.1.0.min.js"]
     }
   ],
   "permissions": ["tabs", "https://twitter.com/*", "storage", "activeTab"],
